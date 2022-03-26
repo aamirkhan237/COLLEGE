@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="d3.v6.min.js"></script>
+</head>
+<body>
+	<svg height=800px width=800>
+	</svg>
+
+</body>
+<script type="text/javascript">
+	// var mysvg=d3.select('body')
+	// .append('svg')
+	// .attr('width',800)
+	// .attr('height',800);
+
+	// var myData=[30,50,25,50,45];
+	var myData=[ {"name":"Asia","population":9600000},
+	{"name":"Europe","population":5400000},
+	{"name":"USA","population":8000000},
+	{"name":"India","population":10000000},
+	{"name":"Canada","population":6000000}];
+
+
+d3.select('body').select('svg')
+	.selectAll('circle')
+	.data(myData)
+	.join('circle')
+	.attr('cx',(d,i)=>(i+1)*100)
+	.attr('cy',200)
+	.attr('r',(d)=>d.population/200000)
+	.attr('fill','orange');
+
+d3.select('body').select('svg')
+	.selectAll('text')
+	.data(myData)
+	.join('text')
+	.attr('x',(d,i)=>(i+1)*100-10)
+	.attr('y',210)
+	.text((d)=>d.name)
+	.attr('fill','blue')
+</script>
+</html>

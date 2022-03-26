@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3 Array</title>
+	<script type="text/javascript" src="d3.v6.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+			
+			function checkAdult(age) {
+					  return age >= 22;
+				}
+
+
+			d3.csv("http://127.0.0.1:8887/data1.csv").then(function(data) {
+				
+
+					
+
+					for(i=0;i<data.length;i++){
+
+						document.write("Name:  "+data[i].name+"<br>")
+						document.write("age:  "+data[i].age+"<br>")
+						document.write("Name:  "+data[i].email+"<br>")
+						document.write("<br>")
+						
+
+
+					}
+
+document.write("<hr>"+"<br>")
+					document.write("Following records are greater than 22"+"<br>")
+					for(i=0;i<data.length;i++){
+
+						if (data[i].age>22){
+							document.write("Name:  "+data[i].name+"<br>")
+							document.write("age:  "+data[i].age+"<br>")
+							document.write("gmail :  "+data[i].email+"<br>")
+							// document.write("***************************"+"<br>")
+							document.write("<br>")
+
+
+						}
+
+
+
+						
+
+
+					}
+
+			});
+
+
+
+
+</script>
+</body>
+</html>

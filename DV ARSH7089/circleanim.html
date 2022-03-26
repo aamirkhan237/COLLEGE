@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>D3</title>
+	<script type="text/javascript" src="d3.v6.min.js"></script>
+</head>
+<body>
+	<div>Hello world <br></div>
+	<!-- <div id="second" >How are you<br></div>
+	<div class="third">D3 example</div> -->
+
+</body>
+
+<script type="text/javascript">
+	
+var mysvg=d3.select("body").append('svg')
+    .attr("width",'900px')
+    .attr('height','900px')
+
+
+mysvg.append('circle')
+    .attr("cx",100)
+    .attr("cy",100)
+    .attr("r",30)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('cx',400)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('r',80)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('cy',800)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('r',30)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('cx',100)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('r',80)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('cy',100)
+    .transition()
+	.delay(200)
+	.duration(500)
+    .attr('r',30)
+
+
+</script>
+
+</html>
