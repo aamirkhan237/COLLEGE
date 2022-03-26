@@ -13,6 +13,7 @@
 		<button onclick="showbar(myData3,3)">BARCHART-3</button>
 		<button onclick="showbar(myData4,4)">BARCHART-4</button>
 		<button onclick="showall()">ALL BARCHART</button>
+		<button onclick="stop1()">Pause</button>
 		
 	</div>
 	<h3></h3>
@@ -22,7 +23,7 @@ var mysvg=d3.select('body')
 	.append('svg')
 	.attr('width',800)
 	.attr('height',800);
-var year=[0,2010,2020];
+var year=[0,2010,2020,2000,2004];
 var myData1=[50,30,69,46,76];
 var myData2=[33,45,78,54,65];
 var myData3=[34,56,76,54,87];
@@ -64,12 +65,20 @@ d3.select('body').select('h3')
 
 
 }
-
+var t1,t2,t3,t4;
 function showall(){
-	setTimeout(()=>{showbar(myData1,1);},1000);
-	setTimeout(()=>{showbar(myData2,2);},2000);
-	setTimeout(()=>{showbar(myData3,3);},3000);
-	setTimeout(()=>{showbar(myData4,4);},4000);
+t1=	setTimeout(()=>{showbar(myData1,1);},1000);
+t2=	setTimeout(()=>{showbar(myData2,2);},2000);
+t3=	setTimeout(()=>{showbar(myData3,3);},3000);
+t4=setTimeout(()=>{showbar(myData4,4);},4000);
 }
+function stop1(){
+	clearInterval(t1);
+	clearInterval(t2);
+	clearInterval(t3);
+	clearInterval(t4s}
+
+	
+
 </script>
 </html>
